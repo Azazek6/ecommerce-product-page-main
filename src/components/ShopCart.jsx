@@ -102,7 +102,7 @@ const ShopCart = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute w-full lg:w-1/3 lg:shadow-2xl z-50 top-16 right-0 flex px-2"
+            className="absolute w-full lg:w-1/3 lg:shadow-2xl z-50 lg:z-[100] top-16 right-0 flex px-2"
           >
             {renderItems()}
           </motion.div>
