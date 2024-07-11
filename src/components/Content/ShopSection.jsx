@@ -38,7 +38,7 @@ const ShopSection = () => {
         />
       </div>
       <button
-        className={`md:w-[60%] bg-[#ff7c1f] font-semibold text-black text-xs flex items-center justify-center gap-3 py-4 rounded-xl hover:bg-[#feab6b] transition-all duration-300 ease-in-out ${amount == 0 ? "cursor-not-allowed" : "cursor-pointer"}`}
+        className={`md:w-[60%] bg-[#ff7c1f] font-semibold text-black text-xs flex items-center justify-center gap-3 py-4 rounded-xl hover:bg-[#feab6b] transition-all duration-300 ease-in-out ${amount == 0 ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}
         onClick={addItems}
         disabled={amount == 0}
       >
