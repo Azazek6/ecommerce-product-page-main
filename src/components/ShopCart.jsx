@@ -95,7 +95,7 @@ const ShopCart = () => {
           onClick={() => setOpenPopover(!openPopover)}
         />
         {products.length > 0 && (
-          <span className="absolute -top-1 -right-1 bg-[#ff7c1f] text-white rounded-full w-5 h-3 flex items-center justify-center text-[0.6rem]">
+          <span className="absolute -top-1  -right-2 lg:-right-1 bg-[#ff7c1f] text-white rounded-full w-5 h-3 flex items-center justify-center text-[0.6rem]">
             {products.length}
           </span>
         )}
