@@ -1,7 +1,31 @@
+import { useState, useEffect } from "react";
 import ShopCart from "./ShopCart";
+import HeaderMobil from "./HeaderMobil";
 import Link from "./Link";
 
 const Header = () => {
+  const [openModal, setOpenModal] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 624px)");
+    const handleMediaQueryChange = (e) => {
+      if (e.matches) {
+        setOpenModal(false);
+      }
+    };
+
+    // Set the initial state based on the current window size
+    if (mediaQuery.matches) {
+      setOpenModal(false);
+    }
+
+    // Listen for changes in the media query
+    mediaQuery.addListener(handleMediaQueryChange);
+
+    // Clean up the listener when the component unmounts
+    return () => mediaQuery.removeListener(handleMediaQueryChange);
+  }, []);
+
   return (
     <nav className="bg-[hsl(0,0%,100%)] flex items-center p-4 justify-between lg:py-4 lg:px-24 xl:px-36">
       <div className="flex items-center gap-3 sm:gap-5 md:gap-12">
@@ -11,7 +35,10 @@ const Header = () => {
           height={100}
           alt="menu-bar"
           className="w-[10%] flex sm:hidden"
+          onClick={setOpenModal}
         />
+
+        <HeaderMobil OnClose={setOpenModal} onOpen={openModal} />
 
         <img
           src="/ecommerce-product-page-main/logo.svg"
