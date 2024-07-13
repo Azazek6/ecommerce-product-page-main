@@ -89,10 +89,17 @@ const ShopCart = () => {
 
   return (
     <>
-      <IoCartOutline
-        className="text-xl lg:text-2xl cursor-pointer"
-        onClick={() => setOpenPopover(!openPopover)}
-      />
+      <div className="relative">
+        <IoCartOutline
+          className="text-xl lg:text-2xl cursor-pointer"
+          onClick={() => setOpenPopover(!openPopover)}
+        />
+        {products.length > 0 && (
+          <span className="absolute -top-1 -right-1 bg-[#ff7c1f] text-white rounded-full w-5 h-3 flex items-center justify-center text-[0.6rem]">
+            {products.length}
+          </span>
+        )}
+      </div>
 
       <AnimatePresence>
         {openPopover && (
